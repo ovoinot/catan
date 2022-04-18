@@ -22,9 +22,11 @@ function CityDrawer(ctx) {
   };
 
   this.ghost = function(corner) {
+    var oldglobalAlpha = this.ctx.globalAlpha;
+    console.log("old ghost city",oldglobalAlpha)
     this.ctx.globalAlpha = .5;
     this.draw({corner: corner, player: "red"});
-    this.ctx.globalAlpha = 1;
+    this.ctx.globalAlpha = oldglobalAlpha; //1;
   }
 }
 

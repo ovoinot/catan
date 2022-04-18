@@ -25,7 +25,7 @@ function RobberDrawer(ctx) {
     body.lineTo(0, -20);
     body.lineTo(-10, 20);
 
-    ctx.fillStyle = "DarkGray";
+    ctx.fillStyle = "Yellow";
     ctx.fill(body);
     ctx.stroke(body);
 

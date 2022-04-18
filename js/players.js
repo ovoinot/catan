@@ -1,2 +1,2 @@
 var MAIN_PLAYER = "red";
-var PLAYERS = ["red", "orange", "green", "blue", "white", "SaddleBrown"];
+var PLAYERS = ["red", "orange", "green", "blue", "purple", "white"];

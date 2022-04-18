@@ -1,0 +1,32 @@
+{
+	"folders": [
+		{
+			"path": "../../Dev/hello"
+		},
+		{
+			"name": "ESP Wallet",
+			"path": "../../Documents/PlatformIO/Projects/ESP Wallet"
+		},
+		{
+			"name": "Prototype display",
+			"path": "../../Documents/PlatformIO/Projects/Prototype display"
+		},
+		{
+			"path": "../../Dev/Web app 3D"
+		},
+		{
+			"path": "../../Dev/Phantom viewer"
+		},
+		{
+			"path": "../../Dev/Game"
+		},
+		{
+			"name": "catan",
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "ESP Wallet",
+		"liveServer.settings.port": 5501
+	}
+}

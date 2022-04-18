@@ -2,38 +2,43 @@ var LOG_RESOURCES = false;
 var ROBBER_LIMIT = 7;
 
 var BRICK = {
-  name: "brick",
-  color: "Brown"
+  name: "brick", /* Kathari */
+  color: "Blue",
+  src:  "https://cdn.discordapp.com/attachments/814201372249030669/933389421909258310/75_Kathari_Loop.gif"
 };
 
 var WHEAT = {
-  name: "wheat",
-  color: "Gold"
+  name: "wheat", /* Marcolian */
+  color: "Red",
+  src:  "https://cdn.discordapp.com/attachments/814201372249030669/933389422198661120/75_Marcoliane_Loop.gif"
 };
 
 var WOOD = {
-  name: "wood",
-  color: "DarkOliveGreen"
+  name: "wood", /* AUgencore */
+  color: "Orange",
+  src: "https://cdn.discordapp.com/attachments/814201372249030669/933389422752313394/75_Augencore_Loop.gif"
 };                
 
 var SHEEP = {
-  name: "sheep",
-  color: "GreenYellow"
+  name: "sheep", /* Earthen*/
+  color: "GreenYellow",
+  src: "https://cdn.discordapp.com/attachments/814201372249030669/933389421645029396/75_Earthen_Loop.gif"
 };                
 
 var ORE = {
-  name: "ore",
-  color: "Gray"
+  name: "ore", /* will be shroud */
+  color: "Purple",
+  src: "https://cdn.discordapp.com/attachments/814201372249030669/933389422488084540/75_Shroud_Loop.gif"
 };                
 
 var DESERT = {
-  name: "desert",
-  color: "Khaki"
+  name: "desert", /* will be singularity...*/
+  color: "rgba(255, 255, 255, 0.5)", // "#E5E8E8",
 };                
 
 var WATER = {
-  name: "water",
-  color: "CornflowerBlue"
+  name: "water", /* will be space...*/
+  color: "rgba(100, 100, 100, 0.5)"
 };                
 
 var ALL_RESOURCES = [BRICK, WHEAT, WOOD, SHEEP, ORE];

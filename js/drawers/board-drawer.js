@@ -1,9 +1,7 @@
 function BoardDrawer(ctx, game) {
-   this.ctx = ctx;
-
+  this.ctx = ctx;
   this.game = game;
   this.board = game.board;
-
   this.tileDrawer = new TileDrawer(ctx);
   this.roadDrawer = new RoadDrawer(ctx);
   this.settlementDrawer = new SettlementDrawer(ctx);
@@ -66,6 +64,7 @@ BoardDrawer.prototype.draw = function() {
         }
       }
     } else if (thing instanceof Tile) {
+      
       if (game.state.shouldGhostRobber(thing)) {
 
       }

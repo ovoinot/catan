@@ -19,19 +19,45 @@ function Hexagon(x, y, size) {
   }
 
   this.fill = function(ctx, color) {
+    // colr is going to be the src image instaed of a color...
     color = color || "black";
+
+    console.log("color",color)  
+
+      var img = new Image();
+      img.src = color;
+
+      var tempCanvas = document.createElement("canvas"),
+          tCtx = tempCanvas.getContext("2d");
+      
+      tempCanvas.width = this.size*2;
+      tempCanvas.height = this.size*2;
+      console.log("ctx.width",this.x)
+      console.log("ctx.width",this.y)
+      console.log("ctx.width",this.size)
+
+      tCtx.translate(-this.size,-this.size);
+      tCtx.drawImage(img, 0, 0, img.width, img.height, this.x, this.y, this.size, this.size);
+      
+
+
+
+      //var img = document.getElementById("image-try");
+      console.log("img",img);
+      var pat = ctx.createPattern(tempCanvas,"repeat");
+      ctx.fillStyle = pat;
+
 
     ctx.save();
 
     this.strokeShape(ctx);
-    ctx.fillStyle = color;
-    ctx.fill();
-    
+    //ctx.fillStyle = color;
+    ctx.fill(); 
     ctx.restore();
   }
 
   this.stroke = function(ctx, color) {
-    color = color || "black";
+    color = color || "white";
 
     ctx.save();
 

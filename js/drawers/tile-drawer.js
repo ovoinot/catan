@@ -15,19 +15,31 @@ function TileDrawer(ctx) {
   };
 
   this.draw = function(tile) {
-    var stroke = "black";
+    var stroke = "White";
 
-    tile.shape.fillStroke(this.ctx, tile.resource.color, stroke);
+    //tile.x = Math.round(tile.x*10)/10;
+    //tile.y = Math.round(tile.y*10)/10;
 
     if (tile.token) {
-      this.tokenDrawer.draw(tile.token, tile.x, tile.y);
+      console.log("tile",tile)
+      tile.shape.fillStroke(this.ctx, tile.resource.color, stroke);
+
+
+      
+      tile.shape.fill(this.ctx,tile.resource.src);
+
+      //void ctx.drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
+
+      this.tokenDrawer.draw(tile.token, tile.x, tile.y);      
     }
 
     this.ctx.save();
+    this.ctx.strokeStyle = "White";
     this.ctx.textAlign = "center";
     this.ctx.textBaseLine = "hanging";
 
     if (tile.isCoast) {
+      
       _.each(tile.shape.getEdges(), function(edge) {
 
         if (edge.isCoast) {
@@ -36,6 +48,7 @@ function TileDrawer(ctx) {
           this.ctx.lineTo(edge.c2.x, edge.c2.y);
 
           if (edge.isPort) {
+            
             this.ctx.fillStyle = edge.port.color;
 
             var midpointX = (tile.x - edge.c2.x) / 2 + edge.c2.x;
@@ -57,7 +70,7 @@ function TileDrawer(ctx) {
               this.ctx.strokeText("2:1", tile.x, tile.y);
             }
           } else {
-            this.ctx.strokeStyle = "black";
+            
             this.ctx.stroke();
           }
         }

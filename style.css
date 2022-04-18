@@ -5,8 +5,14 @@ body {
   font-size: 20pt;
   color: white;
   font-family: sans-serif;
-
-  background-color: CornflowerBlue;
+  /* background-image: "./images/Parallel_Earth.jpeg"; */
+  /* background-color: black; */
+  background-image: url('../images/Parallel_Earth.jpeg');
+    background-size: cover;
+    color: #ddd;
+    background-color: black;
+    background-repeat: repeat;
+    background-size: 100%;
 }
 
 .info {

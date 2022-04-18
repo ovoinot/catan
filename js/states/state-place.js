@@ -14,11 +14,13 @@ function StatePlace(game) {
 
 StatePlace.prototype.start = function() {
   $("button.trade").attr("disabled", true);
+  $("button.buycard").attr("disabled", true);
+  $("button.playcard").attr("disabled", true);
   $("button.roll").attr("disabled", true);
   $("button.endturn").hide();
 
   if (this.state === StatePlace.Start) {
-    Banner("Place your first Settlement.");
+    Banner("Place your first Base Unit.");
     this.state = StatePlace.FirstSettlement;
     return;
   }
@@ -34,7 +36,7 @@ StatePlace.prototype.execute = function(thing) {
     if (thing instanceof Corner) {
       this.PlaceSettlement(thing);
     } else {
-      Banner("Must place Settlement.");
+      Banner("Must place Base Unit.");
     }
   } else if (this.state === StatePlace.FirstRoad ||
              this.state === StatePlace.SecondRoad) {
@@ -58,7 +60,7 @@ StatePlace.prototype.execute = function(thing) {
         this.game.turn.startTurn();
       }
     } else {
-      Banner("Must place Road.");
+      Banner("Must place Connection.");
     }
   }
 };
@@ -77,14 +79,14 @@ StatePlace.prototype.PlaceSettlement = function(thing) {
     var settlement = this.board.buildSettlement(corner, "red", true);
 
     if (this.state === StatePlace.FirstSettlement) {
-      Banner("Place your first Road.");
+      Banner("Place your first Connection.");
       this.state = StatePlace.FirstRoad;
     }
 
     if (this.state === StatePlace.SecondSettlement) {
       this.initStartingResources(settlement);
 
-      Banner("Place your second Road.");
+      Banner("Place your second Connection.");
       this.state = StatePlace.SecondRoad;
     }
   }
@@ -155,9 +157,9 @@ StatePlace.prototype.PlaceRoad = function(thing) {
 
 StatePlace.prototype.placeFirstRoad = function(edge) {
   if (this.board.buildRoad(edge, "red"), true) {
-    Banner("Place your second Settlement.");
+    Banner("Place your second Base Unit.");
   } else {
-    Banner("Road can't be placed here.");
+    Banner("Connection can't be placed here.");
   }
 }
 

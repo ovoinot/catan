@@ -22,6 +22,7 @@ function SettlementDrawer(ctx) {
   };
 
   this.ghost = function(corner) {
+    
     this.ctx.globalAlpha = .5;
     this.draw({corner: corner, player: "red"});
     this.ctx.globalAlpha = 1;
